@@ -19,7 +19,7 @@ Morisawa Inc. is Japan’s leading font foundry that has never wavered from its 
 
 If you want to build fonts manually on your own computer:
 
-* `cd fonts && sh ./build.sh` will produce a font file using your local Python environment. Note that you should `pip install afdko=4.0.0` before production.
+* `cd sources && sh ./build.sh` will produce a font file using your local Python environment. Note that you should `pip install afdko=4.0.0` before production.
 * `sh ./build_font.sh` will produce a font file using docker, which automatically set up development environment in a docker image and produce a font file.
 
 ## License
