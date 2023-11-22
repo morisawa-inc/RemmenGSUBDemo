@@ -2,17 +2,13 @@
 
 ![Remmen GSUB Demo](documentation/header.png)
 
-モリサワのBIZ UD明朝は、教育やビジネス文書作成などに活用できるよう、より多くの方にとって読みやすく使いやすいように設計されたユニバーサルデザインフォントです。BIZ UD明朝をベースとした技術サンプルとして、連綿体フォントを設計しました。
+This repository is a companion material for a series of my articles ([#1](https://zenn.dev/morisawa/articles/remmentai-font-1), [#2](https://zenn.dev/morisawa/articles/remmentai-font-2) and [#3](https://zenn.dev/morisawa/articles/remmentai-font-3)) published onto Zenn, which illustrate how to design and implement a Japanse remmen-tai (connected script) font using [contextual substitution techniques](https://github.com/morisawa-inc/RemmenGSUBDemo/blob/main/sources/ufo/RemmenGSUBDemo-Regular.ufo/features.fea).
 
-BIZ UD Mincho is a universal design typeface designed to be easy to read and ideal for education and business documentation. We designed a Remmen-tai (Japanese script) font as a technical sample based on BIZ UD Mincho.
+Download the latest version of the demo font from [here](https://github.com/morisawa-inc/RemmenGSUBDemo/blob/main/fonts/otf/RemmenGSUBDemo-Regular.otf). The font is based on [BIZ UD Mincho Medium](https://github.com/googlefonts/morisawa-biz-ud-mincho) hosted on GitHub as part of the Google Fonts library.
 
-Download the latest version of the fonts [from the releases page](https://github.com/morisawa-inc/remmen-gsub-demo/releases).
+このリポジトリは、Zenn の記事『フォントでつながった文字を表現する』（[#1](https://zenn.dev/morisawa/articles/remmentai-font-1), [#2](https://zenn.dev/morisawa/articles/remmentai-font-2), [#3](https://zenn.dev/morisawa/articles/remmentai-font-3)）の関連資料です。[GSUB](https://github.com/morisawa-inc/RemmenGSUBDemo/blob/main/sources/ufo/RemmenGSUBDemo-Regular.ufo/features.fea) を活用した連綿体フォントの設計と実装のデモです。
 
-## About Morisawa
-
-モリサワは、1924 年に世界に先駆けて邦文写真植字機を発明して以来、一貫してタイポグラフィの未来をみつめて研究開発を続けているフォントメーカーです。日本語および多言語フォント 1,500 書体以上が使えるフォントライセンス製品をはじめ、web フォントや組込みフォント、多言語ユニバーサル情報配信ツールなどを提供しています。
-
-Morisawa Inc. is Japan’s leading font foundry that has never wavered from its commitment to undertaking research and development in typography since its invention of the first Japanese phototypesetting machine in 1924. The company provides font licenses for over 1,500 typefaces of Japanese and multi-script, web font services, embedded fonts, and multilingual e-magazine/book solution services.
+デモフォントの最新版は[こちら](https://github.com/morisawa-inc/RemmenGSUBDemo/blob/main/fonts/otf/RemmenGSUBDemo-Regular.otf)からダウンロードできます。このフォントは [BIZ UD Mincho Medium](https://github.com/googlefonts/morisawa-biz-ud-mincho) をベースにしており、派生元フォントは Google Fonts ライブラリの一部として GitHub から取得できます。
 
 
 ## Building
