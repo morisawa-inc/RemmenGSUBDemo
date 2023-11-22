@@ -1,0 +1,71 @@
+languagesystem DFLT dflt;
+languagesystem cyrl dflt;
+languagesystem grek dflt;
+languagesystem hani dflt;
+languagesystem kana dflt;
+languagesystem latn dflt;
+
+table name {
+  nameid 0 "Font \00a9 Copyright 2019-2023 Morisawa Inc. All rights reserved.";
+  nameid 11 "http://www.morisawa.co.jp/";
+  nameid 13 "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL. This Font Software is distributed on an ‘AS IS’ BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the SIL Open Font License for the specific language, permissions and limitations governing your use of this Font Software.";
+  nameid 14 "http://scripts.sil.org/OFL";
+} name;
+
+table vmtx {
+  VertAdvanceY cid00181 500;
+  VertAdvanceY cid00182 2000;
+  VertAdvanceY cid00183 2000;
+} vmtx;
+
+lookup vert_common {
+  sub [cid00003 - cid00091] by [cid00092 - cid00180];
+} vert_common;
+
+feature vert {
+  lookup vert_common;
+} vert;
+
+feature vrt2 {
+  sub cid00001 by cid00181;
+  lookup vert_common;
+} vrt2;
+
+# すべての連綿合字をかき集めたクラス
+@all_remmens = [cid00182 - cid00183];
+
+# 句読点とスペース以外のすべての文字 ≒ ほぼすべての文字
+# cid00001 cid00002 cid00003 cid00004 cid00092 cid00093 cid00181 を除く。
+@all_chars_except_punctuations = [cid00005 - cid00091 cid00094 - cid00180];
+
+# 句読点とスペース、つまり文章を区切る文字。
+@punctuations = [cid00001 - cid00004 cid00092 cid00093 cid00181];
+
+lookup Medi {
+  # 「、あり〜」などは無視
+  ignore sub @punctuations cid00096' cid00168;
+  # 「〜あり。」などは無視
+  ignore sub cid00096' cid00168 @punctuations;
+
+  # 【連綿 +「あり」】は無視
+  ignore sub @all_remmens cid00096' cid00168;
+
+  # 「あり」連綿合字。
+  sub cid00096' cid00168' by cid00182;
+} Medi;
+
+lookup Fina {
+  # 【「ます」ね】は無視
+  ignore sub cid00156' cid00119 @all_chars_except_punctuations;
+
+  # 【連綿 +「ます」】は無視
+  ignore sub @all_remmens cid00156' cid00119;
+
+  # 「ます」連綿合字。【ます。】【ます、】などで発動
+  sub cid00156' cid00119' by cid00183;
+} Fina;
+
+feature calt {
+  lookup Medi;
+  lookup Fina;
+} calt;

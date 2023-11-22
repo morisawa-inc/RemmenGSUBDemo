@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  afdko:
+    build:
+      context: docker
+      dockerfile: Dockerfile
+    image: afdkodk
+    volumes:
+      - ./sources:/work
+    working_dir: /work
